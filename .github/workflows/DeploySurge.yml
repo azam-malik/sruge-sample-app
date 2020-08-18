@@ -15,7 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-2016
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -29,8 +29,8 @@ jobs:
        node-version: '12'
     # Step to install Surge
     - name: Installing Surge
-      run: npm intall --global surge
+      run: npx intall --global surge
     
     # Deploy app to surge
     - name: Deploy app to surge
-      run: surge ./ axiom_azam_malik.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./ azam_malik.surge.sh --token ${{ secrets.SURGE_TOKEN }}
